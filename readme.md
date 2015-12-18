@@ -13,6 +13,9 @@ editors. Tern's main features are:
 
 [Tern.js Documentation](http://ternjs.net/doc/manual.html)
 
+[tern_for_sublime](https://github.com/ternjs/tern_for_sublime)
+
+
 ##Pre Install Steps:
 ####Fixing npm permissions on `/usr/local` & Configuring Global Settings:
 ```shell
@@ -105,15 +108,11 @@ git clone git://github.com/ternjs/tern_for_sublime.git
 ####cd into the git-repo you just made and npm install tern's dependencies:
 ```shell
 
-#
 cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/tern_for_sublime/;
 
 
 npm install;
 	
-
-npm install acorn --save
-
 ```
 
 
@@ -167,7 +166,6 @@ managing settings on a per project basis. You should place a
 `.tern-project` file in the root folder of the project you are working on. When
 ST3 loads a project folder it will create an express server
 instance that tern can load on. Loading `projects` is a good habit to get in.
-ST3 symbol scraping, completions etc depend on it.
 
 ###Plugins:
 
@@ -211,12 +209,28 @@ ST3 symbol scraping, completions etc depend on it.
 
 ```
 
-####default tern key commands:
-If you want to to re-assing what keycommands trigger the differnt tern
-capabilites you need to copy the default keycommands into your User's `Default
-(OSX).sublime-keymap`
+####keybindings
 
-		Menu: Sublime-Text
+these are my default keybindings. You can use the ones that come with tern by default or change them in your user keyfile.
+`menu: Sublime Text -> Preferences -> Key Bindings User`
+
+        # the keyfile is in json format. Syntax is very important.
+
+
+```json
+    [
+      {"keys": ["alt+d"], "command": "tern_jump_to_def",     "context": [{"key": "selector", "operand": "source.js"} ] },
+      {"keys": ["alt+b"], "command": "tern_jump_back",       "context": [{"key": "selector", "operand": "source.js"} ] },
+      {"keys": ["alt+v"], "command": "tern_select_variable", "context": [{"key": "selector", "operand": "source.js"} ] },
+      {"keys": ["alt+o"], "command": "tern_describe",        "context": [{"key": "selector", "operand": "source.js"} ] }
+    ]
+```
+
+####default tern key commands:
+If you want to to re-assign what key commands trigger the different tern
+capabilities you need to copy the default key commands into your User's `Default(OSX).sublime-keymap`
+
+		Menu: Sublime-Text -> Key bindings -> User
 
 ###QuickTip:
 add this key-command to your `Default (OSX).sublime-keymap` to open up or make
