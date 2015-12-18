@@ -5,7 +5,7 @@
 tern is an intelligent code analysis engine designed to be used inside text
 editors. Tern's main features are:
 
-	-Autocompletion on JS variables and properties.
+	-Auto-completion on JS variables and properties.
 	-Function argument hints.
 	-Querying the type of an expression.
 	-Definitions(with full Doc Support).
@@ -31,7 +31,7 @@ find . -type f ! -user `whoami` -exec gstat -c "%a-%u-%g %N" '{}' \+ ;
 ####Optional: Make some backups just in case.
 > Probably a good idea to backup your files before you go and change the
 > permissions on a very critical folder. Either back up the actual files, or
-> backup the permisssions so you can look back and see what they were.
+> backup the permissions so you can look back and see what they were.
 
 ```shell
 	
@@ -40,12 +40,12 @@ find . -type f ! -user `whoami` -exec gstat -c "%a-%u-%g %N" '{}' \+ ;
 
 sudo rsync -a '/usr/local' '/tmp/local';
 
-# option 2: make a tarball
+# option 2: make a tar-ball
 # cd where you want the archive to be:
 
 cd /path/to/where/you/want/the/backup/to/be;
 
-# make a tarball archive of all your files.
+# make a tar-ball archive of all your files.
 # gtar -cpvzf 'filename.tar.gz' 'path-to-backup'
 
 sudo gtar -cpvzf 'local.tar.gz' '/tmp/local'
@@ -91,13 +91,13 @@ npm update -g;
 
 ##Tern Installation:
 
-####cd into ST3 Packagges and clone a repo:
+####cd into ST3 Packages and clone a repo:
 ```shell
 	
-# go to where ST3 install packages:
+# Go to the location where package control install your packages:
 cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/;
 	
-# clone tern_for_sublime using git:
+# Clone tern_for_sublime using git:
 git clone git://github.com/ternjs/tern_for_sublime.git
 	
 ```
