@@ -17,6 +17,23 @@ editors. Tern's main features are:
 
 
 ##Pre Install Steps:
+
+####Fixing SublimeText's $PATH:
+
+```python
+
+#if you have any type of path error or you're having problems finding your files.
+#make sure your os $PATH env variable is being passed in correctly. open up the sublime
+#console and execute:
+
+import os;
+print(os.environ);
+
+
+```
+
+[Install SublimeFixMacPath](https://github.com/int3h/SublimeFixMacPath)
+
 ####Fixing npm permissions on `/usr/local` & Configuring Global Settings:
 ```shell
 
@@ -218,19 +235,36 @@ these are my default keybindings. You can use the ones that come with tern by de
 
 
 ```json
-    [
-      {"keys": ["alt+d"], "command": "tern_jump_to_def",     "context": [{"key": "selector", "operand": "source.js"} ] },
-      {"keys": ["alt+b"], "command": "tern_jump_back",       "context": [{"key": "selector", "operand": "source.js"} ] },
-      {"keys": ["alt+v"], "command": "tern_select_variable", "context": [{"key": "selector", "operand": "source.js"} ] },
-      {"keys": ["alt+o"], "command": "tern_describe",        "context": [{"key": "selector", "operand": "source.js"} ] }
-    ]
+[{
+  "keys": ["alt+d"],
+  "command": "tern_jump_to_def",
+  "context": [{
+    "key": "selector",
+    "operand": "source.js"
+  }]
+}, {
+  "keys": ["alt+b"],
+  "command": "tern_jump_back",
+  "context": [{
+    "key": "selector",
+    "operand": "source.js"
+  }]
+}, {
+  "keys": ["alt+v"],
+  "command": "tern_select_variable",
+  "context": [{
+    "key": "selector",
+    "operand": "source.js"
+  }]
+}, {
+  "keys": ["alt+o"],
+  "command": "tern_describe",
+  "context": [{
+    "key": "selector",
+    "operand": "source.js"
+  }]
+}]
 ```
-
-####default tern key commands:
-If you want to to re-assign what key commands trigger the different tern
-capabilities you need to copy the default key commands into your User's `Default(OSX).sublime-keymap`
-
-		Menu: Sublime-Text -> Key bindings -> User
 
 ###QuickTip:
 add this key-command to your `Default (OSX).sublime-keymap` to open up or make
