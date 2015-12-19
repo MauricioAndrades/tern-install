@@ -15,6 +15,16 @@ editors. Tern's main features are:
 
 [tern_for_sublime](https://github.com/ternjs/tern_for_sublime)
 
+#Installation Steps:
+####breakdown
+1. Quit ST3.
+1. Clone tern_for_sublime into ST3's Packages folder.
+2. `cd` into packages folder/tern's folder.
+3. `npm` install the dependencies.
+4. set up tern prefs.
+5. code away happily ever after.
+
+
 
 ##Pre Install Steps:
 
@@ -24,10 +34,14 @@ editors. Tern's main features are:
 
 #if you have any type of path error or you're having problems finding your files.
 #make sure your os $PATH env variable is being passed in correctly. open up the sublime
-#console and execute:
+#console and execute
 
 import os;
+#then
 print(os.environ);
+
+#to check your currently loaded environment setting.
+
 
 
 ```
@@ -174,8 +188,6 @@ $ cpath;
 
 ##Using Tern:
 
-####Working with Project Folders:
-When you are working on a project, you should be
 
 ####.tern-project Files
 Tern uses `.tern-project` files to manage importing 3rd party plugins and
@@ -187,6 +199,8 @@ instance that tern can load on. Loading `projects` is a good habit to get in.
 ###Plugins:
 
 ###Useful snippet for .tern-project Files
+This snippet expands when you type `tern-project` + `TAB`. You save it as `.tern-project` in the root of your project dir. It will automatically ignore
+the `.node_modules` folder inside your root. 
 ```js
 
 <snippet>
