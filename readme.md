@@ -17,16 +17,27 @@ editors. Tern's main features are:
 
 #Installation Steps:
 ####breakdown
-1. Quit ST3.
-1. Clone tern_for_sublime into ST3's Packages folder.
-2. `cd` into packages folder/tern's folder.
-3. `npm` install the dependencies.
-4. set up tern prefs.
-5. code away happily ever after.
+
+Quit ST3.
+
+        1. Clone tern_for_sublime into ST3's Packages folder.
+        2. `cd` into packages folder/tern's folder.
+        3. `npm` install the dependencies.
+        4. set up tern prefs.
+        5. code away happily ever after.
 
 
 
-##Pre Install Steps:
+##Optional Pre Install Steps:
+
+####Install better updated versions of utitlities you use all the time:
+
+```shell
+
+brew install gnu-tar;
+brew install coreutils;
+
+```
 
 ####Fixing SublimeText's $PATH:
 
@@ -151,9 +162,9 @@ npm install;
 ####Make a Pref file in your ST3 User Prefs:
 ```shell
 
-# ST3 settings that live inside packages are non-writable on purpuse so you can
+# ST3 settings that live inside packages are non-writable on purpose so you can
 # restore to a fresh state without having to reinstall.
-# Any setting in the User space supercedes any other setting in ST3.
+# Any setting in the User space supersedes any other setting in ST3.
 touch ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Tern.sublime-settings;
 
 ```
@@ -162,45 +173,43 @@ touch ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Tern.sublime
 ####Get the Absolute PATH for Tern's bin/
 ```shell
 
-# cd into tern_for_sublime's bin:
+# cd into tern_for_sublime's bin folder @:
 $ cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/tern_for_sublime/node_modules/tern/bin;
 # copy the current path to your clipboard:
-$ cpath;
+$ pwd;
 
 ```
 
 
 ####Make and Copy these Settings into your ST3 User Prefs Folder.
+`Menu: Sublime Text -> Packages Settings-> Tern for Sublime`
+
 ```json
 {
     "tern_argument_hints": false,
     "tern_output_style": "tooltip",
     "tern_argument_completion": false,
-    "tern_command": ["node", "[absolute path to]/Packages/tern_for_sublime/node_modules/tern/bin/tern"]
 }
 ```
 
-
-###Create the Settings File:
-```json
-	
-```
-
-##Using Tern:
+##USING TERN:
 
 
 ####.tern-project Files
-Tern uses `.tern-project` files to manage importing 3rd party plugins and
+Tern uses `.tern-project` files to manage importing 3rd party plug-ins and
 managing settings on a per project basis. You should place a
 `.tern-project` file in the root folder of the project you are working on. When
 ST3 loads a project folder it will create an express server
 instance that tern can load on. Loading `projects` is a good habit to get in.
 
-###Plugins:
+###PLUG-INS:
 
 ###Useful snippet for .tern-project Files
-This snippet expands when you type `tern-project` + `TAB`. You save it as `.tern-project` in the root of your project dir. It will automatically ignore
-the `.node_modules` folder inside your root. 
+    This snippet expands when you type `tern-project` + `TAB`. You save it as
+    `.tern-project` in the root of your project dir. It will automatically
+    ignore the `.node_modules` folder inside your root.
+
+
 ```js
 
 <snippet>
@@ -240,7 +249,7 @@ the `.node_modules` folder inside your root.
 
 ```
 
-####keybindings
+####KEYBINDINGS
 
 these are my default keybindings. You can use the ones that come with tern by default or change them in your user keyfile.
 `menu: Sublime Text -> Preferences -> Key Bindings User`
@@ -280,7 +289,7 @@ these are my default keybindings. You can use the ones that come with tern by de
 }]
 ```
 
-###QuickTip:
+###QUICKTIP:
 add this key-command to your `Default (OSX).sublime-keymap` to open up or make
 `settings` in `/Packages/User/`: i.e. If you are viewing an HTML file -> It will
 make a settings file in your user space for all HTML files. Equivalent to
