@@ -28,7 +28,7 @@ Quit ST3.
 
 
 
-##Optional Pre Install Steps:
+##__Optional__ Pre Install Steps:
 
 ####Install better updated versions of utitlities you use all the time:
 
